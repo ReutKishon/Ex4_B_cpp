@@ -1,0 +1,16 @@
+SOLDIERS: Paramedic.cpp ParamedicCommander.cpp FootSoldier.cpp FootCommander.cpp Sniper.cpp SniperCommander.cpp
+
+test: Test.cpp  Board.cpp $(SOLDIERS)
+/usr/bin/g++ -o test Test.cpp Board.cpp Sniper.cpp FootSoldier.cpp Paramedic.cpp ParamedicCommander.cpp FootCommander.cpp  
+      ./test
+
+demo: Demo.cpp  Board.cpp $(SOLDIERS)
+        /usr/bin/g++ -g Demo.cpp Soldier.cpp Board.cpp $(SOLDIERS) -o demo
+   
+        ./demo
+clean: 
+        rm ./test
+        rm ./demo
+
+.PHONY:  clean
+
